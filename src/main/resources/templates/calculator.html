@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>RPN Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>RPN Calculator</h1>
+
+    <form th:action="@{/calculate}" method="post">
+        <div class="form-group">
+            <label class="form-label" for="expression">Enter RPN expression</label>
+            <input class="form-control" type="text" id="expression" name="expression" placeholder="Example: 5 3 +" required>
+        </div>
+
+        <button class="btn" type="submit">Calculate</button>
+    </form>
+
+    <div th:if="${error}">
+        <div class="error">
+            <p th:text="${error}"></p>
+        </div>
+    </div>
+
+    <div th:if="${result}">
+        <div class="result">
+            <h2>Result:</h2>
+            <p th:text="${result}"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
