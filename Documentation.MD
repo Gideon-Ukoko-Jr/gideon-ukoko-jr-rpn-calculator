@@ -1,6 +1,6 @@
 How To Run Use The RPN Calculator:
 
-1. You can access it on this link : https://gideon-ukoko-jr-rpn-calculator-production.up.railway.app/calculate
+1. You can access it on this link : https://gideon-ukoko-jr-rpn-calculator-production.up.railway.app
 2. Alternatively, you can import the codebase and run the GideonUkokoJrRpnCalculatorApplication.java class located in the directory 'src/main/java/com/gideon/jrrpncalculator/GideonUkokoJrRpnCalculatorApplication.java' and open localhost:8080 in your web browser.
 3. Once the calculator web page is open, input your Desired RPN expression into the text box and click on the Calculate button.
 
